@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBSITE CLIENTS ORGANIZER V1.0</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>WEBSITE CLIENTS ORGANIZER V1.0</h1>
+        <p class="author">Author: B. P.</p>
+        
+        <!-- Form for entering client details -->
+        <input type="text" id="clientName" placeholder="CLIENT NAME" required>
+        <input type="url" id="websiteUrl" placeholder="WEBSITE URL" required>
+        <input type="text" id="contactPerson" placeholder="CONTACT PERSON" required>
+        <input type="email" id="contactEmail" placeholder="CONTACT EMAIL" required>
+        <input type="tel" id="contactNumber" placeholder="CONTACT NUMBER" required>
+        <select id="requestType">
+            <option value="New Client">New Client</option>
+            <option value="New Site Request">New Site Request</option>
+            <option value="New Feature Request">New Feature Request</option>
+            <option value="Issue/Bug Report">Issue/Bug Report</option>
+        </select>
+        <button onclick="addClient()">ADD CLIENT</button>
+        <button onclick="addClientWithMissingData()">ADD CLIENT WITH MISSING DATA</button>
+
+        <!-- Table to display client information -->
+        <table id="clientsTable">
+            <thead>
+                <tr>
+                    <th>CLIENT NAME</th>
+                    <th>WEBSITE URL</th>
+                    <th>CONTACT PERSON</th>
+                    <th>CONTACT EMAIL</th>
+                    <th>CONTACT NUMBER</th>
+                    <th>CLIENT REQUEST TYPE</th>
+                    <th class="editable-header">ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Client rows will be added here -->
+            </tbody>
+        </table>
+
+        <!-- Buttons for actions -->
+        <div>
+            <button onclick="exportToCSV()">EXPORT TO CSV</button>
+        </div>
+
+        <!-- Chart for visualization -->
+        <canvas id="clientsChart" width="400" height="200"></canvas>
+
+        <!-- Field for client needs and requests -->
+        <div class="client-needs">
+            <h2>CLIENT NEEDS & REQUESTS</h2>
+            <input type="text" id="clientNameRequests" placeholder="CLIENT NAME">
+            <input type="url" id="websiteUrlRequests" placeholder="WEBSITE URL">
+            <textarea id="clientRequests" rows="4" placeholder="ENTER CLIENT NEEDS AND REQUESTS"></textarea>
+            <button onclick="addClientRequests()">ADD CLIENT REQUESTS</button>
+        </div>
+
+        <!-- Table to display client requests -->
+        <div class="client-requests">
+            <h2>CLIENT REQUESTS</h2>
+            <table id="requestsTable">
+                <thead>
+                    <tr>
+                        <th>CLIENT NAME</th>
+                        <th>WEBSITE URL</th>
+                        <th>CLIENT REQUEST</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Client request rows will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>   
+</html>

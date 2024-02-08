@@ -1,0 +1,16 @@
+{
+  "name": "website-clients-organizer-v1.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "B. P.",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.2.2",
+    "electron-packager": "^17.1.2"
+  }
+}
